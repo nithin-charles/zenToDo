@@ -1,0 +1,115 @@
+<div class="dashboard-section">
+  <div class="dash-board-wrapper" [class.potraitMode]="isPotrait">
+    <div class="top-section">
+      <div class="greeting-card-section">
+        <!-- Need to update this based on Time -->
+        <div class="good-label">Good</div>
+        <div class="time-based-greet">{{ timeOfday }}</div>
+      </div>
+      <div class="profile-img">
+        @if (profileImageUrl){
+        <img
+          class="profile-pic"
+          [src]="profileImageUrl"
+          (click)="myProfile()"
+        />
+        } @else{
+        <div class="profile-icon" (click)="myProfile()">
+          <mat-icon class="icon">account_circle</mat-icon>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="project-section">
+      <div class="left-container">
+        <div class="project-header">Projects</div>
+        @if(projectCount > 0){
+        <div class="project-count">You have {{ projectCount }} Projects</div>
+        }
+      </div>
+      <div class="right-container">
+        <div class="project-add-button-container">
+          <button
+            mat-fab
+            extended
+            class="project-add-button"
+            (click)="openAddNewProjectModal()"
+          >
+            <mat-icon>add</mat-icon>
+            New Project
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="project-conatiner">
+      <div class="project-list">
+        @for (project_item of projects; track $index) {
+        <!-- <div>
+          <h4>{{ item.project_name }}</h4>
+          <h6>{{ item.task_count }}</h6>
+        </div> -->
+        <zen-to-do-project-card
+          [project]="project_item"
+        ></zen-to-do-project-card>
+        }
+      </div>
+    </div>
+
+    <div class="today-task-container">
+      <div class="today-container">
+        <div class="header">Today's Task</div>
+        <div class="day-desc">{{ formattedDate }}</div>
+      </div>
+      <div class="task-add-button-container">
+        <!-- <button mat-fab extended>
+          <mat-icon>add</mat-icon>
+          New Task
+        </button> -->
+        <button
+          mat-fab
+          extended
+          class="task-add-button"
+          (click)="openAddNewTaskModal()"
+        >
+          <mat-icon>add</mat-icon>
+          New Task
+        </button>
+      </div>
+    </div>
+    <mat-tab-group
+      mat-stretch-tabs="false"
+      mat-align-tabs="start"
+      class="tab-group"
+    >
+      <!-- Commenting out the All section for now -->
+      <!-- <mat-tab label="All" class="tab-label">
+        <div class="all-task-container">
+          @for (item of items; track $index) {
+          <zen-to-do-card [toDoItem]="item"></zen-to-do-card>
+          }
+        </div>
+      </mat-tab> -->
+      <mat-tab label="Open">
+        <div class="task-container">
+          @if(isAnyTaskOpen){ @for (item of items; track $index) { @if
+          (item.status == 0){
+          <zen-to-do-card [toDoItem]="item"></zen-to-do-card>
+          } } } @else {
+          <zen-to-do-no-task-card [cardType]="0"></zen-to-do-no-task-card>
+          }
+        </div>
+      </mat-tab>
+      <mat-tab label="Closed">
+        <div class="task-container">
+          <!--Should rework on this listing (Need to look for optimised solution)-->
+          @if(isAnyTaskClosed){ @for (item of items; track $index) { @if
+          (item.status == 1){
+          <zen-to-do-card [toDoItem]="item"></zen-to-do-card>
+          } } } @else{
+          <zen-to-do-no-task-card [cardType]="1"></zen-to-do-no-task-card>
+          }
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

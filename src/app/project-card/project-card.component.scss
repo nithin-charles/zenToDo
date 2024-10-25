@@ -1,0 +1,46 @@
+@import "../../scss_variables.scss";
+.card-container {
+  // box-shadow: $floating-box-shadow;
+  width: 175px;
+  height: 120px;
+  // background-color: rgb(44, 160, 180);
+  color: antiquewhite;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  &.red {
+    background-color: $red-project-card-bg-color;
+  }
+  &.blue {
+    background-color: $blue-project-card-bg-color;
+  }
+  &.yellow {
+    background-color: $yellow-project-card-bg-color;
+  }
+  &.green {
+    background-color: $green-project-card-bg-color;
+  }
+  &.violet {
+    background-color: $violet-project-card-bg-color;
+  }
+  &.grey {
+    background-color: $grey-project-card-bg-color;
+  }
+
+  .card-head-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    align-items: center;
+  }
+  .progress-label,
+  .task-progress {
+    font-size: 12.5px;
+  }
+  .progress-wrapper {
+    padding: 10px 0;
+  }
+}

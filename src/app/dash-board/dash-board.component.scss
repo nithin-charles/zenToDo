@@ -1,0 +1,125 @@
+.dashboard-section {
+  background-color: black;
+  color: white;
+  min-height: calc(100vh - 60px);
+  height: auto;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  .dash-board-wrapper {
+    width: 80%;
+    height: max-content;
+    &.potraitMode {
+      width: 90% !important;
+    }
+  }
+  .top-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10%;
+    .greeting-card-section {
+      padding-bottom: 15px;
+      font-size: 25px;
+      .good-label {
+        color: white;
+      }
+      .time-based-greet {
+        color: gray;
+      }
+    }
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .profile-icon {
+      .icon {
+        width: 50px;
+        height: 50px;
+        font-size: 50px;
+      }
+    }
+  }
+  .project-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    .project-header {
+      font-size: large;
+    }
+    .project-add-button-container {
+      .project-add-button {
+        width: 150px;
+        height: 40px;
+      }
+    }
+  }
+  .project-conatiner {
+    width: 100%; /* Full width of the container */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks, making the list items align horizontally */
+    padding-bottom: 15px;
+  }
+  .project-list {
+    display: inline-block;
+  }
+  .project-list::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  .project-list zen-to-do-project-card {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .today-task-container {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    .today-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .header {
+        font-size: 25px;
+        margin-bottom: 2px;
+      }
+      .day-desc {
+        color: rgb(174, 174, 174);
+      }
+    }
+    .task-add-button-container {
+      .task-add-button {
+        width: 130px;
+        height: 40px;
+      }
+    }
+  }
+  .task-container {
+    margin-top: 10px;
+  }
+  ::ng-deep .mat-mdc-tab {
+    .mdc-tab__content {
+      .mdc-tab__text-label {
+        color: white !important;
+      }
+    }
+  }
+}
+
+// #region Scroll-bar Styles
+::-webkit-scrollbar {
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #1f1f1f;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 5px;
+}
+// #endregion

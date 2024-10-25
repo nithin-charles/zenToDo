@@ -1,0 +1,41 @@
+<div class="card-container" [ngClass]="projectThemeColor()">
+  <div class="card-head-wrapper">
+    <div class="card-header text-overflow" (click)="openProfile()">
+      {{ project?.project_name }}
+    </div>
+    <!-- <div class="three-dot" (click)="threeDotMenu()">. . .</div> -->
+    <button
+      class="three-dot"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openProfile()">
+        <mat-icon>edit</mat-icon>
+        <span>Edit</span>
+      </button>
+      <button mat-menu-item (click)="delete()">
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+      </button>
+    </mat-menu>
+  </div>
+  <div class="progress-container" (click)="openProfile()">
+    <div class="progress-label">Progress</div>
+    <div class="progress-wrapper">
+      <mat-progress-bar
+        class="example-margin"
+        [mode]="mode"
+        [value]="project?.task_progress"
+        [bufferValue]="bufferValue"
+      >
+      </mat-progress-bar>
+    </div>
+    <div class="task-progress" (click)="openProfile()">
+      {{ project?.task_progress }}%
+    </div>
+  </div>
+</div>

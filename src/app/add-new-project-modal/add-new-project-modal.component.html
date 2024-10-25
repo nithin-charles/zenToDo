@@ -1,0 +1,38 @@
+<mat-dialog-content>
+  <form [formGroup]="newProjectForm">
+    <table cellspacing="0" class="field-wrapper">
+      <tr>
+        <td>
+          <mat-form-field class="field-container">
+            <mat-label>Project Name</mat-label>
+            <input matInput formControlName="projectName" />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <mat-form-field class="field-container">
+          <mat-label>Project Theme</mat-label>
+          <mat-select formControlName="projectTheme">
+            <mat-option [value]="0">Red</mat-option>
+            <mat-option [value]="1">Blue</mat-option>
+            <mat-option [value]="2">Yellow</mat-option>
+            <mat-option [value]="3">Green</mat-option>
+            <mat-option [value]="4">Violet</mat-option>
+            <mat-option [value]="5">Grey</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </tr>
+    </table>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>Close</button>
+  <button
+    mat-raised-button
+    mat-dialog-close
+    (click)="addNewProject()"
+    [disabled]="isFormValid()"
+  >
+    Add Project
+  </button>
+</mat-dialog-actions>

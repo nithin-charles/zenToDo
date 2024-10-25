@@ -1,0 +1,72 @@
+.login-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  .section-wrapper {
+    border-radius: 8px;
+    width: 60%;
+    height: 80%;
+    background-color: rgb(14, 14, 14);
+    .app-name {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50%;
+      font-size: 70px;
+
+      .zen {
+        color: #b8f905;
+
+        font-family: "Times New Roman", Times, serif;
+      }
+      .to-do {
+        color: whitesmoke;
+        font-family: "Times New Roman", Times, serif;
+      }
+    }
+    .button-wrapper {
+      height: 50%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .login-button {
+        background-color: #b8f905;
+        color: black;
+        width: 230px;
+        height: 50px;
+        border-radius: 30px;
+        font-size: 20px;
+      }
+      .login-with-google {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+        .login-label {
+          margin-left: 10px;
+        }
+      }
+      .divider {
+        height: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .app-name {
+    font-size: 40px !important;
+  }
+  .section-wrapper {
+    width: 80% !important;
+    height: 60% !important;
+  }
+}

@@ -1,0 +1,45 @@
+<mat-dialog-content class="modal-container" [class.potraitMode]="isPotrait">
+  <form [formGroup]="newTaskForm">
+    <table cellspacing="0" class="field-wrapper">
+      <tr>
+        <td>
+          <mat-form-field class="field-container">
+            <mat-label>Task Name</mat-label>
+            <input matInput formControlName="taskName" />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <mat-form-field class="field-container">
+          <mat-label>Description</mat-label>
+          <textarea
+            matInput
+            placeholder="Description"
+            formControlName="taskDescription"
+          ></textarea>
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field class="field-container">
+          <mat-label>Priority</mat-label>
+          <mat-select formControlName="priority">
+            <mat-option [value]="0">Low</mat-option>
+            <mat-option [value]="1">Medium</mat-option>
+            <mat-option [value]="2">High</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </tr>
+    </table>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>Close</button>
+  <button
+    mat-raised-button
+    mat-dialog-close
+    (click)="addNewTask()"
+    [disabled]="isFormValid()"
+  >
+    Add task
+  </button>
+</mat-dialog-actions>
