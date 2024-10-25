@@ -1,0 +1,87 @@
+<div class="project-container">
+  <div class="header-section" [ngClass]="projectThemeColor()">
+    <div class="back-button-wrapper" (click)="backToDashBoard()">
+      <mat-icon fontIcon="arrow_back_ios"></mat-icon>
+    </div>
+    <div class="project-name-wrapper">
+      @if(project != undefined){
+      <h1>{{ project.project_name }}</h1>
+      }
+    </div>
+    <div class="progress-wrapper">
+      <div class="progress-label">Progress</div>
+      <div class="progress-bar-wrapper">
+        <mat-progress-bar
+          class="example-margin"
+          [mode]="mode"
+          [value]="value"
+          [bufferValue]="bufferValue"
+        >
+        </mat-progress-bar>
+      </div>
+      <div class="task-progress">{{ value }}%</div>
+    </div>
+  </div>
+  <div class="task-wrapper">
+    <div class="today-task-container">
+      <div class="today-container">
+        <div class="header">Task</div>
+        <div class="day-desc">{{ formattedDate }}</div>
+      </div>
+      <div class="task-add-button-container">
+        <!-- <button mat-fab extended>
+            <mat-icon>add</mat-icon>
+            New Task
+          </button> -->
+        <button
+          mat-fab
+          extended
+          class="task-add-button"
+          (click)="openAddNewTaskModal()"
+        >
+          <mat-icon>add</mat-icon>
+          New Task
+        </button>
+      </div>
+    </div>
+    <div class="task-list-wrapper">
+      <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <!-- Commenting out the All section for now -->
+        <!-- <mat-tab label="All" class="tab-label">
+            <div class="all-task-container">
+              @for (item of items; track $index) {
+              <zen-to-do-card [toDoItem]="item"></zen-to-do-card>
+              }
+            </div>
+          </mat-tab> -->
+        <mat-tab label="Open">
+          <div class="task-container">
+            @if(isAnyTaskOpen){ @for (item of toDoItems; track $index) { @if
+            (item.status == 0){
+            <zen-to-do-card
+              [toDoItem]="item"
+              [isProjectItems]="true"
+            ></zen-to-do-card>
+            } } } @else {
+            <zen-to-do-no-task-card [cardType]="0"></zen-to-do-no-task-card>
+            }
+          </div>
+        </mat-tab>
+        <mat-tab label="Closed">
+          <div class="task-container">
+            <!--Should rework on this listing (Need to look for optimised solution)-->
+            @if(isAnyTaskClosed){ @for (item of toDoItems; track $index) { @if
+            (item.status == 1){
+            <zen-to-do-card
+              [toDoItem]="item"
+              [isProjectItems]="true"
+            ></zen-to-do-card>
+            } } } @else{
+            <zen-to-do-no-task-card [cardType]="1"></zen-to-do-no-task-card>
+            }
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

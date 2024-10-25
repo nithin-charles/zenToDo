@@ -1,0 +1,13 @@
+.card {
+  background-color: rgb(47, 47, 47);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin: 0 10px 10px 10px;
+  .description {
+    color: white;
+    font-size: 1.5rem;
+  }
+}

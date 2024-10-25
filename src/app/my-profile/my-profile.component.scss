@@ -1,0 +1,42 @@
+@import "../../scss_variables.scss";
+.profile-page {
+  height: 100vh;
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .profile-wrapper {
+    box-shadow: $purple-blue-shadow;
+    border-radius: 12px;
+    height: 80%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &.potraitMode {
+      width: 80% !important;
+    }
+    .profile-image {
+      border-radius: 50%;
+      padding: 10px;
+    }
+    .profile-icon {
+      .icon {
+        width: 70px;
+        height: 70px;
+        font-size: 70px;
+      }
+    }
+    .profile-name {
+      font-size: large;
+      padding: 10px;
+    }
+    .goToDashboard-button,
+    .logout-button {
+      margin: 10px;
+    }
+  }
+}

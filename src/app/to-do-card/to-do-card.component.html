@@ -1,0 +1,73 @@
+@if(!isEditMode){
+<div class="card">
+  <div class="card-wrapper">
+    <div class="top-section">
+      <div class="left-container">
+        <div class="task-completed"></div>
+        <div
+          class="task-header text-overflow"
+          [class.strikethrough]="isCompleted"
+        >
+          {{ toDoItem?.name }}
+        </div>
+        <div class="task-description text-overflow">
+          {{ toDoItem?.description }}
+        </div>
+      </div>
+      <div class="right-container">
+        <div class="option-icons">
+          <mat-icon class="edit-icon" (click)="triggerEditMode()"
+            >edit</mat-icon
+          >
+          <mat-icon class="delete-icon" (click)="delete()">delete</mat-icon>
+        </div>
+        <mat-checkbox
+          class="check-box"
+          [(ngModel)]="isCompleted"
+          (change)="clicked()"
+        ></mat-checkbox>
+      </div>
+    </div>
+    <div class="bottom-section" [class]="setPriority()">
+      {{ taskPriority }}
+    </div>
+  </div>
+</div>
+} @else {
+<div class="edit-card">
+  <form class="edit-card-form" [formGroup]="editTaskForm">
+    <div class="task-name-editor-wrapper">
+      <input type="text" class="task-name-editor" formControlName="taskName" />
+    </div>
+    <div class="task-desc-editor-wrapper">
+      <input
+        type="text"
+        class="task-desc-editor"
+        formControlName="taskDescription"
+      />
+    </div>
+    <div class="task-priority-wrapper">
+      <mat-form-field class="field-container">
+        <mat-label>Priority</mat-label>
+        <mat-select formControlName="priority">
+          <mat-option [value]="0">Low</mat-option>
+          <mat-option [value]="1">Medium</mat-option>
+          <mat-option [value]="2">High</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+  <div class="edit-buttons-wrapper">
+    <button mat-raised-button (click)="closeEditMode()" class="close-button">
+      Close
+    </button>
+    <button
+      mat-raised-button
+      (click)="saveChanges()"
+      [disabled]="isFormValid()"
+    >
+      Save
+    </button>
+  </div>
+</div>
+}

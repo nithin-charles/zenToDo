@@ -1,0 +1,26 @@
+<div class="profile-page">
+  <div class="profile-wrapper" [class.potraitMode]="isPotrait">
+    @if(profileImg){
+    <img class="profile-image" [src]="profileImg" />
+
+    } @else {
+    <div class="profile-icon">
+      <mat-icon class="icon">account_circle</mat-icon>
+    </div>
+    }
+    <p class="profile-name">{{ name }}</p>
+    <div class="button-container"></div>
+    <button
+      mat-flat-button
+      class="goToDashboard-button"
+      (click)="goToDashBoard()"
+    >
+      <mat-icon>arrow_back</mat-icon>
+      Dashboard
+    </button>
+    <button mat-flat-button class="logout-button" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Logout
+    </button>
+  </div>
+</div>
