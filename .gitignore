@@ -2,6 +2,7 @@
 
 # env details
 /src/environment/environment.ts
+.env.local
 
 # Compiled output
 /dist
