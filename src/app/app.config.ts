@@ -11,13 +11,8 @@ import {
   AngularFireDatabase,
   AngularFireDatabaseModule,
 } from '@angular/fire/compat/database';
-import {
-  AngularFireAuth,
-  AngularFireAuthModule,
-  PERSISTENCE,
-} from '@angular/fire/compat/auth';
-import { environment } from '../environment/environment';
-import { getAuth, provideAuth } from '@angular/fire/auth';
+import { AngularFireAuth, PERSISTENCE } from '@angular/fire/compat/auth';
+import { environment } from '../environment/environment.prod';
 import { SETTINGS as AUTH_SETTINGS } from '@angular/fire/compat/auth';
 import { USE_DEVICE_LANGUAGE } from '@angular/fire/compat/auth';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -36,6 +31,7 @@ export const appConfig: ApplicationConfig = {
       useValue: { appVerificationDisabledForTesting: true },
     },
     { provide: USE_DEVICE_LANGUAGE, useValue: true },
-    { provide: PERSISTENCE, useValue: 'local' }, provideAnimationsAsync(),
+    { provide: PERSISTENCE, useValue: 'local' },
+    provideAnimationsAsync(),
   ],
 };
