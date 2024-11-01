@@ -12,7 +12,6 @@
     justify-content: space-around;
     border-radius: 0 0 20px 20px;
     &.red {
-      // background-color: $red-project-card-bg-color;
       background-color: #000000;
       background-image: repeating-radial-gradient(
           circle at 0 0,
@@ -22,7 +21,6 @@
         repeating-linear-gradient(#f7454555, #f74545);
     }
     &.blue {
-      // background-color: $blue-project-card-bg-color;
       background-color: #000000;
       background-image: repeating-radial-gradient(
           circle at 0 0,
@@ -32,7 +30,6 @@
         repeating-linear-gradient(#4547f755, #4547f7);
     }
     &.yellow {
-      // background-color: $yellow-project-card-bg-color;
       background-color: #000000;
       background-image: repeating-radial-gradient(
           circle at 0 0,
@@ -42,7 +39,6 @@
         repeating-linear-gradient(#fde43b55, #fde43b);
     }
     &.green {
-      // background-color: $green-project-card-bg-color;
       background-color: #000000;
       background-image: repeating-radial-gradient(
           circle at 0 0,
@@ -52,7 +48,6 @@
         repeating-linear-gradient(#065e5b55, #065e5b);
     }
     &.violet {
-      // background-color: $violet-project-card-bg-color;
       background-color: #000000;
       background-image: repeating-radial-gradient(
           circle at 0 0,
@@ -62,7 +57,6 @@
         repeating-linear-gradient(#4801a055, #4801a0);
     }
     &.grey {
-      // background-color: $grey-project-card-bg-color;
       background-color: #000000;
       background-image: repeating-radial-gradient(
           circle at 0 0,
@@ -98,12 +92,15 @@
     display: flex;
     justify-content: space-between;
     color: rgb(174, 174, 174);
+    &.potraitMode {
+      width: 90%;
+    }
     .today-container {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       .header {
-        font-size: 25px;
+        font-size: large;
         margin-bottom: 2px;
       }
     }
@@ -119,6 +116,9 @@
   }
   .task-list-wrapper {
     width: 70%;
+    &.potraitMode {
+      width: 90% !important;
+    }
   }
   ::ng-deep .mat-mdc-tab {
     .mdc-tab__content {

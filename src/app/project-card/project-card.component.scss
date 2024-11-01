@@ -1,9 +1,7 @@
 @import "../../scss_variables.scss";
 .card-container {
-  // box-shadow: $floating-box-shadow;
   width: 175px;
   height: 120px;
-  // background-color: rgb(44, 160, 180);
   color: $white-text-color;
   font-weight: 500;
   padding: 20px;
@@ -13,7 +11,6 @@
   justify-content: space-between;
   cursor: pointer;
   &.red {
-    // background-color: $red-project-card-bg-color;
     background-color: #000000;
     background-image: repeating-radial-gradient(
         circle at 0 0,
@@ -23,7 +20,6 @@
       repeating-linear-gradient(#c2000055, #c20000);
   }
   &.blue {
-    // background-color: $blue-project-card-bg-color;
     background-color: #000000;
     background-image: repeating-radial-gradient(
         circle at 0 0,
@@ -33,7 +29,6 @@
       repeating-linear-gradient(#4547f755, #4547f7);
   }
   &.yellow {
-    // background-color: $yellow-project-card-bg-color;
     background-color: #000000;
     background-image: repeating-radial-gradient(
         circle at 0 0,
@@ -43,7 +38,6 @@
       repeating-linear-gradient(#fde43b55, #fde43b);
   }
   &.green {
-    // background-color: $green-project-card-bg-color;
     background-color: #000000;
     background-image: repeating-radial-gradient(
         circle at 0 0,
@@ -53,7 +47,6 @@
       repeating-linear-gradient(#065e5b55, #065e5b);
   }
   &.violet {
-    // background-color: $violet-project-card-bg-color;
     background-color: #000000;
     background-image: repeating-radial-gradient(
         circle at 0 0,
@@ -63,7 +56,6 @@
       repeating-linear-gradient(#4801a055, #4801a0);
   }
   &.grey {
-    // background-color: $grey-project-card-bg-color;
     background-color: #000000;
     background-image: repeating-radial-gradient(
         circle at 0 0,

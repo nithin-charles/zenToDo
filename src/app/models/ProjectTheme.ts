@@ -5,10 +5,4 @@ export enum ProjectTheme {
   green,
   violet,
   grey,
-  // red = 'red',
-  // blue = 'blue',
-  // yellow = 'yellow',
-  // green = 'green',
-  // violet = 'violet',
-  // grey = 'grey',
 }

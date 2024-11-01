@@ -9,37 +9,10 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'zen-to-do';
   /**
    *
    */
-  constructor(private responsive: BreakpointObserver) {}
-
-  ngOnInit(): void {
-    // To Change the Layout to support Landscape Mode
-    this.responsive
-      .observe([
-        Breakpoints.HandsetLandscape,
-        Breakpoints.TabletLandscape,
-        Breakpoints.WebLandscape,
-      ])
-      .subscribe((result) => {
-        if (result.matches) {
-          console.log('ZenToDo is now in Landscape Mode');
-        }
-      });
-
-    this.responsive
-      .observe([
-        Breakpoints.HandsetPortrait,
-        Breakpoints.TabletPortrait,
-        Breakpoints.WebPortrait,
-      ])
-      .subscribe((result) => {
-        if (result.matches) {
-          console.log('ZenToDo is now in Landscape Mode');
-        }
-      });
-  }
+  constructor() {}
 }

@@ -43,7 +43,6 @@ export class DashBoardComponent implements OnInit {
   isAnyTaskOpen: boolean = false;
   isAnyTaskClosed: boolean = false;
   inboxProject: string = 'Inbox';
-  // projectCount: number = 0;
   isPotrait: boolean = false;
   timeOfday!: string;
 
@@ -67,7 +66,6 @@ export class DashBoardComponent implements OnInit {
       .subscribe((result) => {
         if (result.matches) {
           this.isPotrait = true;
-          console.log('This is phone in Landscape Mode');
         } else {
           this.isPotrait = false;
         }
@@ -134,8 +132,6 @@ export class DashBoardComponent implements OnInit {
               project_theme: projectItem.project_theme,
             });
           });
-          console.log(this.projects);
-          // this.projectCount = this.projects.length;
         },
       });
   }

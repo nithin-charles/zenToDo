@@ -16,6 +16,7 @@ import { AddNewTaskModalComponent } from '../add-new-task-modal/add-new-task-mod
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { ProjectTheme } from '../models/ProjectTheme';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'zen-to-do-project',
@@ -44,12 +45,14 @@ export class ProjectComponent implements OnInit {
   bufferValue = 75;
   isAnyTaskClosed!: boolean;
   isAnyTaskOpen!: boolean;
+  isPotraitMode: boolean = false;
   readonly dialog = inject(MatDialog);
 
   constructor(
     private route: ActivatedRoute,
     private firebaseStoreService: FireStoreService,
-    private router: Router
+    private router: Router,
+    private responsive: BreakpointObserver
   ) {}
 
   public ngOnInit(): void {
@@ -109,6 +112,21 @@ export class ProjectComponent implements OnInit {
       month: 'short',
     });
     this.formattedDate = `${day},  ${dayMonth}`;
+
+    this.responsive
+      .observe([
+        Breakpoints.HandsetPortrait,
+        Breakpoints.TabletPortrait,
+        Breakpoints.WebPortrait,
+      ])
+      .subscribe((result) => {
+        if (result.matches) {
+          this.isPotraitMode = true;
+          console.log('This is phone in Landscape Mode');
+        } else {
+          this.isPotraitMode = false;
+        }
+      });
   }
 
   public backToDashBoard() {

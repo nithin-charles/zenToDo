@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="task-wrapper">
-    <div class="today-task-container">
+    <div class="today-task-container" [class.potraitMode]="isPotraitMode">
       <div class="today-container">
         <div class="header">Task</div>
         <div class="day-desc">{{ formattedDate }}</div>
@@ -44,7 +44,7 @@
         </button>
       </div>
     </div>
-    <div class="task-list-wrapper">
+    <div class="task-list-wrapper" [class.potraitMode]="isPotraitMode">
       <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
         <!-- Commenting out the All section for now -->
         <!-- <mat-tab label="All" class="tab-label">
