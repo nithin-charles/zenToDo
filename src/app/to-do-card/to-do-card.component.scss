@@ -34,7 +34,7 @@
           width: 80%;
           &.strikethrough {
             text-decoration: line-through;
-            color: black;
+            color: $white-text-color;
           }
         }
         .task-description {
@@ -47,6 +47,7 @@
         display: flex;
         align-items: flex-start;
         .option-icons {
+          display: flex;
           align-self: flex-start;
           margin-top: 9px;
           margin-right: 10px;
