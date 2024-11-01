@@ -4,35 +4,75 @@
   height: 100vh;
   background-color: black;
   .header-section {
-    //background-color: orangered;
+    color: $white-text-color;
     height: 20%;
     padding: 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border-radius: 0 0 20px 20px;
     &.red {
-      background-color: $red-project-card-bg-color;
+      // background-color: $red-project-card-bg-color;
+      background-color: #000000;
+      background-image: repeating-radial-gradient(
+          circle at 0 0,
+          transparent 0,
+          #000000 32px
+        ),
+        repeating-linear-gradient(#f7454555, #f74545);
     }
     &.blue {
-      background-color: $blue-project-card-bg-color;
+      // background-color: $blue-project-card-bg-color;
+      background-color: #000000;
+      background-image: repeating-radial-gradient(
+          circle at 0 0,
+          transparent 0,
+          #000000 32px
+        ),
+        repeating-linear-gradient(#4547f755, #4547f7);
     }
     &.yellow {
-      background-color: $yellow-project-card-bg-color;
+      // background-color: $yellow-project-card-bg-color;
+      background-color: #000000;
+      background-image: repeating-radial-gradient(
+          circle at 0 0,
+          transparent 0,
+          #000000 32px
+        ),
+        repeating-linear-gradient(#fde43b55, #fde43b);
     }
     &.green {
-      background-color: $green-project-card-bg-color;
+      // background-color: $green-project-card-bg-color;
+      background-color: #000000;
+      background-image: repeating-radial-gradient(
+          circle at 0 0,
+          transparent 0,
+          #000000 32px
+        ),
+        repeating-linear-gradient(#065e5b55, #065e5b);
     }
     &.violet {
-      background-color: $violet-project-card-bg-color;
+      // background-color: $violet-project-card-bg-color;
+      background-color: #000000;
+      background-image: repeating-radial-gradient(
+          circle at 0 0,
+          transparent 0,
+          #000000 32px
+        ),
+        repeating-linear-gradient(#4801a055, #4801a0);
     }
     &.grey {
-      background-color: $grey-project-card-bg-color;
+      // background-color: $grey-project-card-bg-color;
+      background-color: #000000;
+      background-image: repeating-radial-gradient(
+          circle at 0 0,
+          transparent 0,
+          #000000 32px
+        ),
+        repeating-linear-gradient(#71717155, #717171);
     }
     .progress-wrapper {
       width: 100%;
-      .progress-label {
-        // padding-bottom: 2%;
-      }
       .progress-bar-wrapper {
         display: flex;
         flex-direction: column;

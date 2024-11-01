@@ -1,11 +1,23 @@
 .card {
   background-color: rgb(47, 47, 47);
+  //
+  background-color: #1f1f1f;
+  opacity: 0.8;
+  background-size: 16px 16px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #1c1c1c 0,
+    #1c1c1c 1.6px,
+    #1f1f1f 0,
+    #1f1f1f 50%
+  );
+  //
   border-radius: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 60px;
-  margin: 0 10px 10px 10px;
+  margin-bottom: 10px;
   .description {
     color: white;
     font-size: 1.5rem;

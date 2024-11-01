@@ -2,7 +2,6 @@
   <div class="dash-board-wrapper" [class.potraitMode]="isPotrait">
     <div class="top-section">
       <div class="greeting-card-section">
-        <!-- Need to update this based on Time -->
         <div class="good-label">Good</div>
         <div class="time-based-greet">{{ timeOfday }}</div>
       </div>
@@ -22,21 +21,19 @@
     </div>
     <div class="project-section">
       <div class="left-container">
-        <div class="project-header">Projects</div>
-        @if(projectCount > 0){
+        <div class="project-header">Project(s)</div>
+        <!-- @if(projectCount > 0){
         <div class="project-count">You have {{ projectCount }} Projects</div>
-        }
+        } -->
       </div>
       <div class="right-container">
         <div class="project-add-button-container">
           <button
             mat-fab
-            extended
             class="project-add-button"
             (click)="openAddNewProjectModal()"
           >
             <mat-icon>add</mat-icon>
-            New Project
           </button>
         </div>
       </div>
@@ -61,18 +58,8 @@
         <div class="day-desc">{{ formattedDate }}</div>
       </div>
       <div class="task-add-button-container">
-        <!-- <button mat-fab extended>
+        <button mat-fab class="task-add-button" (click)="openAddNewTaskModal()">
           <mat-icon>add</mat-icon>
-          New Task
-        </button> -->
-        <button
-          mat-fab
-          extended
-          class="task-add-button"
-          (click)="openAddNewTaskModal()"
-        >
-          <mat-icon>add</mat-icon>
-          New Task
         </button>
       </div>
     </div>

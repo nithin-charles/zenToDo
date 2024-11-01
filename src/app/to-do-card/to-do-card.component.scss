@@ -1,11 +1,25 @@
+@import "../../scss_variables.scss";
 .card {
+  color: $white-text-color;
   background-color: #1f1f1f;
+  //
+  background-color: #1f1f1f;
+  opacity: 0.8;
+  background-size: 16px 16px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #1c1c1c 0,
+    #1c1c1c 1.6px,
+    #1f1f1f 0,
+    #1f1f1f 50%
+  );
+  //
   border-radius: 10px;
   display: flex;
   justify-content: start;
   align-items: center;
   //height: 100px;
-  margin: 0 10px 10px 10px;
+  margin-bottom: 10px;
   .card-wrapper {
     width: calc(100% - 20px);
     padding: 10px;
@@ -16,7 +30,7 @@
       .left-container {
         width: 70%;
         .task-header {
-          font-size: 1.5rem;
+          font-size: large;
           width: 80%;
           &.strikethrough {
             text-decoration: line-through;
@@ -52,8 +66,7 @@
       margin-top: 10px;
       font-size: smaller;
       width: max-content;
-      // background-color: red;
-      padding: 2.5px 5px;
+      padding: 2.5px 10px;
       border-radius: 10px;
       &.priority-high {
         background-color: red;
@@ -77,6 +90,18 @@
 
 .edit-card {
   background-color: #1f1f1f;
+  //
+  background-color: #1f1f1f;
+  opacity: 0.8;
+  background-size: 16px 16px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #1c1c1c 0,
+    #1c1c1c 1.6px,
+    #1f1f1f 0,
+    #1f1f1f 50%
+  );
+  //
   border-radius: 10px;
   width: auto;
   display: flex;
@@ -84,7 +109,7 @@
   justify-content: start;
   align-items: center;
   height: 200px;
-  margin: 0 10px 10px 10px;
+  margin-bottom: 10px;
   box-shadow: inset 0 0 0 0.25px white;
   .edit-card-form,
   .field-container {
@@ -92,7 +117,7 @@
     align-self: start;
 
     .task-priority-wrapper {
-      width: 30% !important;
+      width: 80% !important;
       padding: 10px 10px 0 10px;
     }
   }
@@ -109,7 +134,7 @@
       border: none;
       background: none;
       box-shadow: none;
-      font-size: 1.5rem;
+      font-size: large;
       width: 90%;
     }
     .task-desc-editor {

@@ -43,7 +43,7 @@ export class DashBoardComponent implements OnInit {
   isAnyTaskOpen: boolean = false;
   isAnyTaskClosed: boolean = false;
   inboxProject: string = 'Inbox';
-  projectCount: number = 0;
+  // projectCount: number = 0;
   isPotrait: boolean = false;
   timeOfday!: string;
 
@@ -135,7 +135,7 @@ export class DashBoardComponent implements OnInit {
             });
           });
           console.log(this.projects);
-          this.projectCount = this.projects.length;
+          // this.projectCount = this.projects.length;
         },
       });
   }
